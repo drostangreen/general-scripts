@@ -1,0 +1,15 @@
+#!/bin/bash
+
+date=$(date +'%F')
+application=("actual" "grocy" "homarr" "mealie" "ombi" "onlyoffice-nextcloud" "trilium" "uptime_kuma" "vaultwarden" "wikijs")
+docker_dir=/home/tadmin
+
+for app in ${application[@]};
+do 
+	echo "Updating $app"
+	docker compose -f $docker_dir/$app/docker-compose.yaml down >> $docker_dir/docker-update-$date.log 1>&1
+       	docker compose -f $docker_dir/$app/docker-compose.yaml pull >> $docker_dir/docker-update-$date.log 2>&1
+       	docker compose -f $docker_dir/$app/docker-compose.yaml up -d >> $docker_dir/docker-update-$date.log 2>&1
+done
+
+echo Updates Finished

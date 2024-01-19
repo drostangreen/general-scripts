@@ -22,6 +22,7 @@ do
 done
 
 # Copy to CIFS share
+mkdir -v $remote_dir/$date >> $remote_dir/logs/docker-backup-$date.log 2>&1
 cp -rv $backup_dir/*$date* $remote_dir/$date >> $remote_dir/logs/docker-backup-$date.log 2>&1
 
 # Keep only last 7 days

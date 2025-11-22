@@ -38,4 +38,4 @@ openssl genrsa -out private/$cert_name.key
 
 openssl req -new -key private/$cert_name.key -sha256 -out csr/$cert_name.csr -config csr/$cert_name-csr.conf
 
-openssl ca -config root-ca.conf -notext -in csr/$cert_name.csr -out certs/$cert_name.crt -extensions req_ext csr/$cert_name-csr.conf
+openssl ca -config root-ca.conf -notext -in csr/$cert_name.csr -out certs/$cert_name.crt -extensions req_ext -extfile csr/$cert_name-csr.conf

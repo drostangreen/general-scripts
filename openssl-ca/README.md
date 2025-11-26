@@ -1,0 +1,4 @@
+# Scripts to make use of a self hosted OpenSSL Certificate Authority
+These are based off of the setup provided by David McKone. Mostly from this [video](https://www.youtube.com/watch?v=nOSl4dmywe8&t=680s). He really does explain the entire setup very well. I just can never remember the actual commands and didn't want to look up his video each time I needed to do something.
+
+To use these just clone the repo. Then you can go into the extra folder and review the cert_defaults.example file. Make any changes to defaults you'd like. Then rename the file to "cert_defaults". All scrips have a help option of -h.

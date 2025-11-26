@@ -1,0 +1,11 @@
+# This is an example.
+# Change these values to what you need to them to be and rename to cert_defaults
+
+countryName=US
+stateOrProvinceName=AnyState
+organizationName=TempLab
+
+# Other Default values
+ca_root_path=home/$(whoami)/ca
+ca_valid_days=3650
+default_valid_days=365

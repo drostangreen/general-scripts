@@ -54,7 +54,7 @@ EOF
 
 GEN-PRIVKEY-CSR(){
     CSR-CONF-GEN
-    [[ -f /tmp/csr-names ]] && sed -i.bak sed '/^\[ alt_names \]/r /tmp/csr-names' csr/$cert_name-csr.conf
+    [[ -f /tmp/csr-names ]] && sed -i.bak '/^\[ alt_names \]/r /tmp/csr-names' csr/$cert_name-csr.conf
     openssl genrsa -out private/$cert_name.key 2048
     openssl req -new -key private/$cert_name.key -sha256 -out csr/$cert_name.csr -config csr/$cert_name-csr.conf
 }
